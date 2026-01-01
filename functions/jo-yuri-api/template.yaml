@@ -1,0 +1,116 @@
+# This AWS SAM template has been generated from your function's configuration.
+# If your function has one or more triggers, note that the AWS resources
+# associated with these triggers aren't fully specified in this template and
+# include placeholder values. Open this template in AWS Infrastructure Composer
+# or your favorite IDE and modify it to specify a serverless application with
+# other AWS resources.
+#
+# - SAM automatically generates permissions to interact with the resources
+#   defined in this template. If your function needs additional permissions, add
+#   Policies to the AWS::Serverless::Function resource.
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: An AWS Serverless Application Model (SAM) template describing your function.
+Resources:
+  joyuriapi:
+    Type: AWS::Serverless::Function
+    Properties:
+      Architectures:
+        - arm64
+      CodeUri: ./src
+      Description: ''
+      EphemeralStorage:
+        Size: 512
+      Handler: lambda_function.lambda_handler
+      Layers:
+        - arn:aws:lambda:us-east-1:000000000000:layer:zo-glass:1
+      LoggingConfig:
+        LogFormat: Text
+        LogGroup: /aws/lambda/jo-yuri-api
+      MemorySize: 128
+      PackageType: Zip
+      RecursiveLoop: Terminate
+      Runtime: python3.14
+      RuntimeManagementConfig:
+        UpdateRuntimeOn: Auto
+      SnapStart:
+        ApplyOn: None
+      Tags: {}
+      Timeout: 63
+      Tracing: PassThrough
+      Events:
+        Trigger1Event:
+          Type: HttpApi
+          Properties:
+            Method: ANY
+            Path: /carousel
+        Trigger2Event:
+          Type: HttpApi
+          Properties:
+            Method: ANY
+            Path: /discography
+        Trigger3Event:
+          Type: HttpApi
+          Properties:
+            Method: ANY
+            Path: /gallery
+        Trigger4Event:
+          Type: HttpApi
+          Properties:
+            Method: ANY
+            Path: /MyResource
+        Trigger5Event:
+          Type: HttpApi
+          Properties:
+            Method: ANY
+            Path: /video
+        Trigger6Event:
+          Type: HttpApi
+          Properties:
+            Method: ANY
+            Path: /news
+        Trigger7Event:
+          Type: HttpApi
+          Properties:
+            Method: ANY
+            Path: /schedule
+        Trigger8Event:
+          Type: HttpApi
+          Properties:
+            Method: ANY
+            Path: /admin/discography
+        Trigger9Event:
+          Type: HttpApi
+          Properties:
+            Method: ANY
+            Path: /admin/schedule
+        Trigger10Event:
+          Type: HttpApi
+          Properties:
+            Method: ANY
+            Path: /admin/carousel
+        Trigger11Event:
+          Type: HttpApi
+          Properties:
+            Method: ANY
+            Path: /admin/gallery
+        Trigger12Event:
+          Type: HttpApi
+          Properties:
+            Method: ANY
+            Path: /schedule/{id}
+        Trigger13Event:
+          Type: HttpApi
+          Properties:
+            Method: ANY
+            Path: /gallery/{id}
+        Trigger14Event:
+          Type: HttpApi
+          Properties:
+            Method: ANY
+            Path: /discography/{id}
+        Trigger15Event:
+          Type: HttpApi
+          Properties:
+            Method: ANY
+            Path: /carousel/{id}
